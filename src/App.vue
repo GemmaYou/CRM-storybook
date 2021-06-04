@@ -1,3 +1,24 @@
+<!--<template>
+  <div id="app">
+    <inbox-screen />
+  </div>
+</template>
+
+<script>
+  import store from './store';
+  import InboxScreen from './components/InboxScreen.vue';
+  export default {
+    name: 'app',
+    store,
+    components: {
+      InboxScreen,
+    },
+  };
+</script>
+<style>
+  @import "./assets/index.css";
+</style> -->
+
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
@@ -7,17 +28,16 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
   components: {
-    HelloWorld,
-  },
+    HelloWorld
+  }
 };
 </script>
 
 <style>
-  @import "./assets/index.css";
+@import "./assets/index.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,4 +46,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style> -->
+</style>

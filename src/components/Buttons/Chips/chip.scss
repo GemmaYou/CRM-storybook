@@ -1,0 +1,23 @@
+.chip-button {
+  border: 0;
+  border-radius: 5px;
+  display: flex;
+  color: #5d5d5d;
+  align-items: center;
+  &:hover{
+    background-color: #e0e0e0;
+    p {
+      &:nth-child(2){
+        color: #a9a9a9;
+      }
+    }
+  }
+  p {
+    margin: 2px;
+    &:nth-child(2){
+      margin-left: 10px;
+      font-size: 12px;
+      color: #e0e0e0;
+    }
+  }
+}

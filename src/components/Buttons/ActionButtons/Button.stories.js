@@ -5,8 +5,8 @@ export default {
   component: MyButton,
   argTypes: {
     backgroundColor: { control: 'color' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
-    // onClick: { action: '按鈕按下了' },
+    color: { control: 'color' },
+    // size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
   },
 };
 
@@ -27,14 +27,9 @@ Secondary.args = {
   label: 'Button',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Round = Template.bind({});
+Round.args = {
+  label: '+',
+  round: true,
+  // backgroundColor: '#00A7F2',
 };

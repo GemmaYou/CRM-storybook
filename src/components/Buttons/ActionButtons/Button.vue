@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import './button.css';
+import './button.scss';
 
 export default {
   name: 'my-button',
@@ -17,14 +17,14 @@ export default {
       type: Boolean,
       default: false,
     },
-    size: {
-      type: String,
-      default: 'medium',
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
-      },
-    },
     backgroundColor: {
+      type: String,
+    },
+    round: {
+      type: Boolean,
+      default: false,
+    },
+    color: {
       type: String,
     },
   },
@@ -32,15 +32,16 @@ export default {
   computed: {
     classes() {
       return {
-        'storybook-button': true,
-        'storybook-button--primary': this.primary,
-        'storybook-button--secondary': !this.primary,
-        [`storybook-button--${this.size}`]: true,
+        'action-button': true,
+        'btn-primary': this.primary,
+        'btn-secondary': !this.primary,
+        'btn-round': this.round,
       };
     },
     style() {
       return {
         backgroundColor: this.backgroundColor,
+        color: this.color,
       };
     },
   },
