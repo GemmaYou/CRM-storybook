@@ -1,20 +1,13 @@
 <template>
   <button type="button" :class="classes" @click="onClick" :style="style">
     <p>{{ label }}</p>
-    <p>X</p>
-    <font-awesome-icon :icon="myIcon" />
+    <p>&#215;</p>
   </button>
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-// import './button.css';
-import './chip.scss';
-
 export default {
   name: 'chip',
-
   props: {
     label: {
       type: String,
@@ -23,14 +16,6 @@ export default {
     backgroundColor: {
       type: String,
     },
-  },
-  data: function() {
-    return {
-      myIcon: faSpinner
-    }
-  },
-  components: {
-    FontAwesomeIcon
   },
   computed: {
     classes() {
@@ -52,3 +37,4 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped src="./Chip.scss">

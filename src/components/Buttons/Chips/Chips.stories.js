@@ -1,7 +1,7 @@
 import Chip from './Chip.vue';
 
 export default {
-  title: 'Example/Chips',
+  title: 'CRM/Button/Chips',
   component: Chip,
   argTypes: {
     backgroundColor: { control: 'color' },

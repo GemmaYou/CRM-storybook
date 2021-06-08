@@ -1,0 +1,16 @@
+.tab {
+  list-style: none;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  cursor: pointer;
+  &:hover {
+    background-color: #e0e0e0;
+  }
+  &.tabOnClick {
+    border-bottom: 2px solid #d5d5d5;
+    background-color: #ebebeb;
+  }
+}

@@ -1,0 +1,28 @@
+.separateButton {
+  cursor: pointer;
+  button {
+    &:nth-child(2) {
+      margin-left: 5px;
+      div {
+        padding: 2px;
+      }
+    }
+  }
+}
+
+.withCloseButton {
+  cursor: pointer;
+  button {
+    &:nth-child(1) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:nth-child(2) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      * {
+        margin: 2px 2px ;
+      }
+    }
+  }
+}
