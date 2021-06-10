@@ -4,7 +4,6 @@ import OneButton from './Button';
 export default {
   title: 'CRM/Button/OneButton',
   excludeStories: /.*Data$/,
-  // component: OneButton,
   argTypes: {
     backgroundColor: {
       control: { type: 'color' }
@@ -49,6 +48,7 @@ export const buttonData = {
   hoverWordColor:'',
   icon: false,
   fontAwesomeIcon: 'faSearch',
+  tooltip: ''
 };
 
 const Template = ( args, { argTypes } ) => ( {
@@ -59,7 +59,7 @@ const Template = ( args, { argTypes } ) => ( {
 } );
 
 export const Primary = Template.bind( {} );
-Primary.args = Object.assign( {}, buttonData, { title:'test', hoverButtonColor:'#0096d9' } );
+Primary.args = Object.assign( {}, buttonData, { title:'test', hoverButtonColor:'#0096d9', tooltip: 'tooltip' } );
 
 export const Secondary = Template.bind( {} );
 Secondary.args = Object.assign( {}, buttonData, { title:'test', primary: false } );

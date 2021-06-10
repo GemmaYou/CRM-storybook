@@ -1,5 +1,7 @@
 <template>
   <button
+    v-b-tooltip.hover
+    :title="button.tooltip"
     type="button"
     :class="classes"
     @click="$emit('click-onebutton')"
@@ -14,6 +16,7 @@
 </template>
 
 <script>
+import { BootstrapVue, BButton, VBTooltip } from 'bootstrap-vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faSearch,
@@ -29,6 +32,7 @@ export default {
   name: 'oneButton',
   components: {
     FontAwesomeIcon,
+    BButton,
   },
   props: {
     button: {
@@ -46,6 +50,7 @@ export default {
         hoverWordColor: '',
         icon: false,
         fontAwesomeIcon: 'faSearch',
+        tooltip: '',
       }),
     },
   },
@@ -96,11 +101,9 @@ export default {
       }
     },
   },
-  // methods: {
-  //   onClick() {
-  //     this.$emit('onClick');
-  //   },
-  // },
+  directives: {
+    'b-tooltip': VBTooltip,
+  },
 };
 </script>
 <style lang="scss" scoped src="./Button.scss">

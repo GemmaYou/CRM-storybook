@@ -1,60 +1,40 @@
 <template>
-  <div>
-    <oneButton v-for="(button, index) in buttons" :key="index" :button="button" />
-  </div>
+  <button class="twoButton" :class="buttons.icon ? 'separateButton' : 'withCloseButton'">
+    <div class="title">
+      <div>{{ buttons.title }}</div>
+      <div v-if="buttons.hoverTitle">{{ buttons.hoverTitle }}</div>
+    </div>
+    <div v-if="buttons.icon" class="fontawesome"><font-awesome-icon :icon="fontawesome" /></div>
+    <div v-else class="close">&#215;</div>
+  </button>
 </template>
 
 <script>
-import oneButton from '../OneButton/Button';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   name: 'twoButton',
   components: {
-    oneButton,
+    FontAwesomeIcon,
   },
   props: {
     buttons: {
-      type: Array,
-      default: () => [],
+      type: Object,
+      required: true,
+      default: () => ({
+        title: 'twoButton',
+        hoverTitle:'twoButtonHover',
+        icon: true,
+      }),
     },
   },
   computed: {
-    // classes() {
-    //   return {
-    //     'action-button': true,
-    //     'btn-primary': !this.icon && this.primary,
-    //     'btn-secondary': !this.icon && !this.primary,
-    //     'btn-round': this.round,
-    //     'btn-icon': this.icon,
-    //   };
-    // },
-    // style() {
-    //   return {
-    //     backgroundColor: this.backgroundColor,
-    //     color: this.color,
-    //   };
-    // },
-    // fontawesome() {
-    //   if ( !this.icon ) return null;
-    //   if ( this.fontAwesomeIcon == 'faSearch') {
-    //     return faSearch;
-    //   } else if ( this.fontAwesomeIcon == 'faPen') {
-    //     return faPen;
-    //   } else if ( this.fontAwesomeIcon == 'faTrashAlt') {
-    //     return faTrashAlt;
-    //   } else if ( this.fontAwesomeIcon == 'faClock') {
-    //     return faClock;
-    //   } else if ( this.fontAwesomeIcon == 'faList') {
-    //     return faList;
-    //   } else if ( this.fontAwesomeIcon == 'faThLarge') {
-    //     return faThLarge;
-    //   }
-    // },
+    fontawesome() {
+      return faTrashAlt;
+    },
   },
   methods: {
-    // onClick() {
-    //   this.$emit('onClick');
-    // },
   },
 };
 </script>

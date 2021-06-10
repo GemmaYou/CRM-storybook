@@ -1,0 +1,11 @@
+.textareas {
+  textarea {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    resize: none;
+    &:focus {
+      outline: none;
+      border: 2px solid #98d8f2;
+    }
+  }
+}

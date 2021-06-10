@@ -1,27 +1,65 @@
-.separateButton {
-  cursor: pointer;
-  button {
-    &:nth-child(2) {
-      margin-left: 5px;
+.twoButton {
+  display: flex;
+  border: none;
+  &.separateButton {
+    background-color: transparent;
+    .title {
+      height: 25px;
+      overflow: hidden;
       div {
-        padding: 2px;
+        padding: 0 10px;
+        height: 25px;
+        background-color: #0eb857;
+        color: #ffffff;
+        border-radius: 5px;
+      }
+    }
+    .fontawesome {
+      margin-left: 5px;
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+      font-size: 12px;
+      line-height: 25px;
+      vertical-align: middle;
+      color: #5d5d5d;
+    }
+    &:hover {
+      .title div:nth-child(1) {
+        margin-top: -25px;
+      }
+      .fontawesome {
+        background-color: #e0e0e0;
       }
     }
   }
-}
-
-.withCloseButton {
-  cursor: pointer;
-  button {
-    &:nth-child(1) {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+  &.withCloseButton {
+    padding: 0;
+    color: #ffffff;
+    font-size: 12px;
+    .title {
+      height: 25px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 0px 10px;
+      background-color: #00a7f2;
+      line-height: 25px;
+      vertical-align: middle;
     }
-    &:nth-child(2) {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      * {
-        margin: 2px 2px ;
+    .close {
+      width: 25px;
+      height: 25px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      // padding: 2px 5px;
+      background-color: #006999;
+      font-weight: bolder;
+      line-height: 25px;
+      vertical-align: middle;
+    }
+    &:hover {
+      .close {
+        background-color: #00a7f2;
       }
     }
   }

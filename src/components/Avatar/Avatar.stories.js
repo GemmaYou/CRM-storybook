@@ -1,27 +1,30 @@
+import { action } from "@storybook/addon-actions";
 import Avatar from './Avatar';
 
 export default {
   title: 'CRM/Avatar/Avatar',
   excludeStories: /.*Data$/,
-  argTypes: {
-    backgroundColor: {
-      control: { type: 'color' }
-    },
-  },
 };
 
-export const labelData = {
-  pic: 'label',
+export const actionsData = {
+  clickAdd: action( "clickAdd" ),
+  clickDelete: action( "clickDelete" ),
+};
+
+export const avatarData = {
+  pic: false,
 };
 
 const Template = ( args, { argTypes } ) => ( {
   props: Object.keys( argTypes ),
   components: { Avatar },
-  template: '<avatar :avatar="$props" />',
+  template: '<avatar :avatar="$props" @clickAdd="clickAdd" @clickDelete="clickDelete" />',
+  methods: actionsData,
 } );
 
 export const Default = Template.bind( {} );
-Default.args = labelData;
+Default.args = avatarData;
 
-// export const ClickedTab = Template.bind( {} );
-// ClickedTab.args = Object.assign( {}, labelData, { onClick: true } );
+export const withPic = Template.bind( {} );
+withPic.args = Object.assign( {}, avatarData, { pic: true } );
+

@@ -3,7 +3,7 @@
   {{ checkbox.label }}
     <input
       type="checkbox"
-      :disabled="true"
+      disabled="true"
       :checked="checkbox.checked"
     />
     <span class="checkmark"></span>

@@ -4,6 +4,7 @@
     <input
       type="radio"
       :checked="radio.checked"
+      disabled="true"
     />
     <span class="checkmark"></span>
   </label>
