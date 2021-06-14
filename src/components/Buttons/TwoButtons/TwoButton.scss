@@ -1,4 +1,5 @@
 .twoButton {
+  cursor: pointer;
   display: flex;
   border: none;
   &.separateButton {
@@ -6,12 +7,18 @@
     .title {
       height: 25px;
       overflow: hidden;
+      line-height: 25px;
+      vertical-align: middle;
       div {
         padding: 0 10px;
         height: 25px;
         background-color: #0eb857;
         color: #ffffff;
         border-radius: 5px;
+        &:nth-child(2){
+          color: #0EB857;
+          background-color: #7ED9A5;
+        }
       }
     }
     .fontawesome {
@@ -61,6 +68,15 @@
       .close {
         background-color: #00a7f2;
       }
+    }
+  }
+  &.clicked {
+    cursor: not-allowed;
+    .title div:nth-child(1) {
+      margin-top: -25px;
+    }
+    .fontawesome {
+      background-color: #e0e0e0;
     }
   }
 }

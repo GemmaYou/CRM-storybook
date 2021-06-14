@@ -18,15 +18,15 @@ export default {
       control: { type: 'color' }
     },
     title: {
-      control: { type:'text'}
+      control: { type: 'text' }
     },
     hoverTitle: {
-      control: { type:'text'}
+      control: { type: 'text' }
     },
     fontAwesomeIcon: {
       control: {
         type: 'select',
-        options: ['faSearch', 'faPen', 'faTrashAlt', 'faClock', 'faList', 'faBorderAll', 'faBuilding']
+        options: ['faSearch', 'faPen', 'faTrashAlt', 'faClock', 'faList', 'faBorderAll', 'faBuilding', 'faStepForward', 'faStepBackward', 'faCaretLeft', 'faCaretRight']
       }
     },
   },
@@ -39,16 +39,15 @@ export const actionsData = {
 export const buttonData = {
   label: true,
   title: '',
-  hoverTitle:'',
   primary: true,
   backgroundColor: '',
-  hoverButtonColor:'',
+  hoverButtonColor: '',
   round: false,
   color: '',
-  hoverWordColor:'',
+  hoverWordColor: '',
   icon: false,
   fontAwesomeIcon: 'faSearch',
-  tooltip: ''
+  disabled: false,
 };
 
 const Template = ( args, { argTypes } ) => ( {
@@ -59,10 +58,10 @@ const Template = ( args, { argTypes } ) => ( {
 } );
 
 export const Primary = Template.bind( {} );
-Primary.args = Object.assign( {}, buttonData, { title:'test', hoverButtonColor:'#0096d9', tooltip: 'tooltip' } );
+Primary.args = Object.assign( {}, buttonData, { title: 'test', hoverButtonColor: '#0096d9' } );
 
 export const Secondary = Template.bind( {} );
-Secondary.args = Object.assign( {}, buttonData, { title:'test', primary: false } );
+Secondary.args = Object.assign( {}, buttonData, { title: 'test', primary: false } );
 
 export const Round = Template.bind( {} );
 Round.args = Object.assign( {}, buttonData, { primary: false, round: true } );

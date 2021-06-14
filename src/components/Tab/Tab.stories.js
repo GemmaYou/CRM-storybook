@@ -1,3 +1,4 @@
+import { action } from "@storybook/addon-actions";
 import Tab from './Tab';
 
 export default {
@@ -10,19 +11,24 @@ export default {
   },
 };
 
+export const actionsData = {
+  changeTab: action( "changeTab" ),
+};
+
 export const tabData = {
   label: 'tab',
-  onClick: false,
+  // onClick: false,
 };
 
 const Template = ( args, { argTypes } ) => ( {
   props: Object.keys( argTypes ),
   components: { Tab },
-  template: '<tab :tab="$props" />',
+  template: '<tab :tab="$props" @changeTab="changeTab"/>',
+  methods: actionsData,
 } );
 
 export const Default = Template.bind( {} );
 Default.args = tabData;
 
-export const ClickedTab = Template.bind( {} );
-ClickedTab.args = Object.assign( {}, tabData, { onClick: true } );
+// export const ClickedTab = Template.bind( {} );
+// ClickedTab.args = Object.assign( {}, tabData, { onClick: true } );

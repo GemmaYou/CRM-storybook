@@ -1,4 +1,5 @@
 .action-button {
+  cursor: pointer;
   border: 0;
   border-radius: 5px;
   p {
@@ -6,8 +7,11 @@
     font-size: 10px;
   }
   &.btn-primary {
+    color: #ffffff;
+    border: 1px solid #00a7f2;
     background-color: #00a7f2;
     &:hover {
+      border: 1px solid #0096d9;
       background-color: #0096d9;
     }
     &:focus {
@@ -19,10 +23,11 @@
     }
   }
   &.btn-secondary {
-    border: 1px solid #d5d5d5;
+    border: 1px solid #00A7F2;
     background-color: #ffffff;
-    color: #5d5d5d;
+    color: #00A7F2;
     &:hover {
+      border: 1px solid #e0e0e0;
       background-color: #e0e0e0;
     }
     &:focus {
@@ -42,6 +47,7 @@
     padding: 0;
     color: #ffffff;
     background-color: #00a7f2;
+    border: none;
     p {
       font-size: 20px;
     }
@@ -50,10 +56,31 @@
     }
   }
   &.btn-icon {
+    width: 20px;
+    height: 20px;
     color: #5d5d5d;
     font-size: 10px;
     &:hover {
       background-color: #E0E0E0;
+    }
+  }
+  &.btn-disabled {
+    cursor: not-allowed;
+    &.btn-primary {
+      border: 1px solid #C6E5F2;
+      background-color: #C6E5F2;
+    }
+    &.btn-secondary {
+      border: 1px solid #CBCACA;
+      color: #CBCACA;
+      background-color: #F6F6F7;
+    }
+    &.btn-round {
+      background-color: #C6E5F2;
+    }
+    &.btn-icon {
+      background-color: #e0e0e0;
+      color: #CBCACA;
     }
   }
 }

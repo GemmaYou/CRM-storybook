@@ -1,0 +1,26 @@
+/* Tooltip container */
+.tooltip {
+  display: inline-block;
+  .tooltiptext {
+    display: none;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 0 5px;
+    border-radius: 6px;
+    font-size: 12px;
+    position: absolute;
+    transform: translateY(-20px);
+    vertical-align: middle;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  /* Show the tooltip text when you mouse over the tooltip container */
+  &:hover .tooltiptext {
+    display: block;
+    opacity: 1;
+  }
+}
+

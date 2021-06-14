@@ -1,21 +1,15 @@
 import TwoButton from './TwoButton';
 
-// const paddedList = () => {
-//   return {
-//     template: '<div style="padding: 10px;"><story/></div>'
-//   };
-// };
-
 export default {
   title: "CRM/Button/TwoButton",
   excludeStories: /.*Data$/,
-  // decorators: [paddedList],
 };
 
 export const twoButtonData = {
   title: 'title',
   hoverTitle:'hoverTitle',
   icon: true,
+  clicked: false,
 };
 
 const Template = ( args, { argTypes } ) => ( {
@@ -26,6 +20,9 @@ const Template = ( args, { argTypes } ) => ( {
 
 export const Default = Template.bind( {} );
 Default.args = twoButtonData;
+
+export const Clicked = Template.bind( {} );
+Clicked.args = Object.assign( {}, twoButtonData, { clicked: true } );
 
 export const WithCloseButton = Template.bind( {} );
 WithCloseButton.args = Object.assign( {}, twoButtonData, { hoverTitle:'', icon: false } );

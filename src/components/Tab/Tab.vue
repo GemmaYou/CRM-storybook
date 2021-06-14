@@ -1,5 +1,5 @@
 <template>
-  <li :style="style" :class="classes">{{ tab.label }}</li>
+  <li :style="style" :class="classes" @click="$emit('changeTab', tab.label)">{{ tab.label }}</li>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
       required: true,
       default: () => ({
         label: 'tab',
-        onClick: false,
+        // onClick: false,
       }),
     },
   },
@@ -19,7 +19,7 @@ export default {
     classes() {
       return {
         'tab': true,
-        'tabOnClick': this.tab.onClick,
+        // 'tabOnClick': this.tab.onClick,
       };
     },
     style() {

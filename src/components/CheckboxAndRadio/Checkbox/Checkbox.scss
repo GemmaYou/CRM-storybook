@@ -1,7 +1,7 @@
 .checkbox {
   display: block;
   position: relative;
-  padding-left: 25px;
+  padding-left: 30px;
   margin-bottom: 12px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -32,7 +32,7 @@
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
-    top: 3px;
+    top: 0;
     left: 0;
     height: 20px;
     width: 20px;

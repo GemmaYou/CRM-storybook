@@ -1,9 +1,11 @@
+import { action } from "@storybook/addon-actions";
 import ButtonGroup from './ButtonGroup';
-import { buttonData, actionsData } from "../OneButton/Button.stories";
+import { tooltipData } from "../../Tooltip/Tooltip.stories";
+import { buttonData } from "../OneButton/Button.stories";
 
 const paddedList = () => {
   return {
-    template: '<div style="padding: 10px;"><story/></div>'
+    template: '<div style="padding: 50px 0;"><story/></div>'
   };
 };
 
@@ -13,20 +15,97 @@ export default {
   decorators: [paddedList],
 };
 
-export const defaultData = [
-  { ...buttonData, label: false, title: '列表' , icon: true, fontAwesomeIcon: 'faList', backgroundColor: "#EBEBEB", hoverButtonColor: '#C6E5F2'},
-  { ...buttonData, label: false, title: '時間軸模式' , icon: true, fontAwesomeIcon: 'faClock', backgroundColor: "#EBEBEB", hoverButtonColor: '#C6E5F2'},
-  { ...buttonData, label: false, title: '類型模式' , icon: true, fontAwesomeIcon: 'faBorderAll', backgroundColor: "#EBEBEB", hoverButtonColor: '#C6E5F2'},
-];
+export const defaultData = {
+  separate: false,
+  tooltips:[
+    { ...tooltipData,
+      tooltip: '列表',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faList'
+      }
+    },
+    { ...tooltipData,
+      tooltip: '時間軸模式',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faClock'
+      }
+    },
+    { ...tooltipData,
+      tooltip: '類型模式',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faBorderAll'
+      }
+    },
+  ]
+};
 
-// default TaskList state
-export const Default = () => ({
+export const separateData = {
+  separate: true,
+  tooltips:[
+    { ...tooltipData,
+      tooltip: '',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faStepBackward'
+      }
+    },
+    { ...tooltipData,
+      tooltip: '',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faCaretLeft'
+      }
+    },
+    { ...tooltipData,
+      tooltip: '',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faCaretRight'
+      }
+    },
+    { ...tooltipData,
+      tooltip: '',
+      data: {
+        ...buttonData,
+        label: false,
+        primary: false,
+        icon: true,
+        fontAwesomeIcon: 'faStepForward'
+      }
+    },
+  ]
+};
+
+const Template = ( args, { argTypes } ) => ( {
+  props: Object.keys( argTypes ),
   components: { ButtonGroup },
-  template: `<buttonGroup :buttons="buttons" @click-onebutton="clickOnebutton" class="buttonGroup"/>`,
-  props: {
-    buttons: {
-      default: () => defaultData
-    }
-  },
-  methods: actionsData
-});
+  template: `<buttonGroup :buttons="$props" />`,
+  // methods: actionsData,
+} );
+
+export const Default = Template.bind({});
+Default.args = defaultData;
+
+export const Separate = Template.bind({});
+Separate.args = separateData;

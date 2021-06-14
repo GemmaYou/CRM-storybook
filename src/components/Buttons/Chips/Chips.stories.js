@@ -14,7 +14,7 @@ const Template = (args, { argTypes }) => ({
   template: '<chip @onClick="onClick" v-bind="$props" />',
 });
 
-export const Test = Template.bind({});
-Test.args = {
+export const Default = Template.bind({});
+Default.args = {
   label: 'Test',
 };

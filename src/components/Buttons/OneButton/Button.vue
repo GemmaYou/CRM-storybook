@@ -1,13 +1,12 @@
 <template>
   <button
-    v-b-tooltip.hover
-    :title="button.tooltip"
     type="button"
     :class="classes"
     @click="$emit('click-onebutton')"
     :style="style"
     :onMouseOver="onMouseOver"
     :onMouseOut="onMouseOut"
+    :disabled="button.disabled"
   >
     <p v-if="button.label && !button.round" v-html="button.title">{{ button.title }}</p>
     <p v-if="button.round && !button.icon">&#x2b;</p>
@@ -16,7 +15,6 @@
 </template>
 
 <script>
-import { BootstrapVue, BButton, VBTooltip } from 'bootstrap-vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faSearch,
@@ -26,13 +24,16 @@ import {
   faList,
   faBorderAll,
   faBuilding,
+  faStepForward,
+  faStepBackward,
+  faCaretLeft,
+  faCaretRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   name: 'oneButton',
   components: {
     FontAwesomeIcon,
-    BButton,
   },
   props: {
     button: {
@@ -41,7 +42,6 @@ export default {
       default: () => ({
         label: true,
         title: '',
-        hoverTitle:'',
         primary: true,
         backgroundColor: '',
         hoverButtonColor: '',
@@ -50,7 +50,7 @@ export default {
         hoverWordColor: '',
         icon: false,
         fontAwesomeIcon: 'faSearch',
-        tooltip: '',
+        disabled: false
       }),
     },
   },
@@ -62,6 +62,7 @@ export default {
         'btn-secondary': !this.button.icon && !this.button.primary,
         'btn-round': this.button.round,
         'btn-icon': this.button.icon,
+        'btn-disabled': this.button.disabled,
       };
     },
     style() {
@@ -84,25 +85,42 @@ export default {
     },
     fontawesome() {
       if (!this.button.icon) return null;
-      if (this.button.fontAwesomeIcon == 'faSearch') {
-        return faSearch;
-      } else if (this.button.fontAwesomeIcon == 'faPen') {
-        return faPen;
-      } else if (this.button.fontAwesomeIcon == 'faTrashAlt') {
-        return faTrashAlt;
-      } else if (this.button.fontAwesomeIcon == 'faClock') {
-        return faClock;
-      } else if (this.button.fontAwesomeIcon == 'faList') {
-        return faList;
-      } else if (this.button.fontAwesomeIcon == 'faBorderAll') {
-        return faBorderAll;
-      } else if (this.button.fontAwesomeIcon == 'faBuilding') {
-        return faBuilding;
+      switch( this.button.fontAwesomeIcon ){
+        case 'faSearch':
+          return faSearch;
+          break;
+        case 'faPen':
+          return faPen;
+          break;
+        case 'faTrashAlt':
+          return faTrashAlt;
+          break;
+        case 'faClock':
+          return faClock;
+          break;
+        case 'faList':
+          return faList;
+          break;
+        case 'faBorderAll':
+          return faBorderAll;
+          break;
+        case 'faBuilding':
+          return faBuilding;
+          break;
+        case 'faStepForward':
+          return faStepForward;
+          break;
+        case 'faStepBackward':
+          return faStepBackward;
+          break;
+        case 'faCaretLeft':
+          return faCaretLeft;
+          break;
+        case 'faCaretRight':
+          return faCaretRight;
+          break;
       }
     },
-  },
-  directives: {
-    'b-tooltip': VBTooltip,
   },
 };
 </script>

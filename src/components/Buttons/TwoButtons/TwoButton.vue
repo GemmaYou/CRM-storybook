@@ -1,5 +1,5 @@
 <template>
-  <button class="twoButton" :class="buttons.icon ? 'separateButton' : 'withCloseButton'">
+  <button :class="classes">
     <div class="title">
       <div>{{ buttons.title }}</div>
       <div v-if="buttons.hoverTitle">{{ buttons.hoverTitle }}</div>
@@ -26,10 +26,19 @@ export default {
         title: 'twoButton',
         hoverTitle:'twoButtonHover',
         icon: true,
+        clicked: false,
       }),
     },
   },
   computed: {
+    classes(){
+      return {
+        'twoButton': true,
+        'separateButton': this.buttons.icon,
+        'withCloseButton': !this.buttons.icon,
+        'clicked': this.buttons.clicked,
+      };
+    },
     fontawesome() {
       return faTrashAlt;
     },
