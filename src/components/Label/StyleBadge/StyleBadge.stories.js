@@ -1,7 +1,7 @@
-import Tag from './Label';
+import StyleBadge from './StyleBadge';
 
 export default {
-  title: 'CRM/Label/Label',
+  title: 'CRM/Label/StyleBadge',
   excludeStories: /.*Data$/,
   argTypes: {
     backgroundColor: {
@@ -10,18 +10,19 @@ export default {
   },
 };
 
-export const labelData = {
-  label: 'label',
+export const badgeData = {
+  label: 'faCar',
+  color: '',
 };
 
 const Template = ( args, { argTypes } ) => ( {
   props: Object.keys( argTypes ),
-  components: { Tag },
-  template: '<tag :tag="$props" />',
+  components: { StyleBadge },
+  template: '<styleBadge :styleBadge="$props" />',
 } );
 
 export const Default = Template.bind( {} );
-Default.args = labelData;
+Default.args = badgeData;
 
 // export const ClickedTab = Template.bind( {} );
 // ClickedTab.args = Object.assign( {}, labelData, { onClick: true } );

@@ -10,7 +10,7 @@ const paddedList = () => {
 };
 
 export default {
-  title: 'CRM/Tooltip/Tooltip',
+  title: 'CRM/Tooltip',
   excludeStories: /.*Data$/,
   decorators: [paddedList],
 };

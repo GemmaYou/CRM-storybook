@@ -3,8 +3,8 @@
     <li
       v-for="item in breadscrumb.location"
       >
-      <a href="#" v-if="item !== breadscrumb.active">{{item}}</a>
-      <span v-else>{{item}}</span>
+      <a :href="item.link" v-if="item.title !== breadscrumb.active">{{item.title}}</a>
+      <span v-else>{{item.title}}</span>
     </li>
   </ol>
 </template>

@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import Dropdown from './Dropdown';
 
 export default {
-  title: 'CRM/Dropdown/Dropdown',
+  title: 'CRM/Dropdown',
   excludeStories: /.*Data$/,
   argTypes: {
     backgroundColor: {

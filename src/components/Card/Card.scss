@@ -1,0 +1,77 @@
+.card {
+  max-width: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow-wrap: break-word;
+  cursor: pointer;
+  padding-top: 3px;
+  position: relative;
+  .label {
+    margin: 0 8px;
+  }
+  .card-title {
+    font-weight: bolder;
+    color: #404040;
+    padding: 3px 8px;
+  }
+  .card-content,
+  .card-time {
+    font-size: 12px;
+    color: #5d5d5d;
+    padding: 0 8px 3px;
+  }
+  .card-contact {
+    display: flex;
+    align-items: center;
+    padding: 0 8px 3px;
+    .card-contact-img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    span {
+      margin-left: 5px;
+      color: #006999;
+    }
+  }
+  .card-owner {
+    background-color: #f5f4f3;
+    color: #828282;
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 0 8px 3px;
+    box-sizing: border-box;
+  }
+  .card-edit {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    color: #a9a9a9;
+    display: none;
+    &:focus {
+      display: block;
+    }
+  }
+  #card-edit-dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    width: 80px;
+    p {
+      padding: 2px;
+      margin: 0;
+      border: 1px solid black;
+      &:first-child {
+        border-bottom: none;
+      }
+    }
+  }
+  &:hover {
+    background-color: #f6f6f7;
+    .card-edit {
+      display: block;
+    }
+  }
+}

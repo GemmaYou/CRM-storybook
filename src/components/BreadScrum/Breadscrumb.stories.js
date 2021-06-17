@@ -8,14 +8,24 @@ import Breadscrumb from "./Breadscrumb";
 // };
 
 export default {
-  title: "CRM/Breadscrumb/Breadscrumb",
+  title: "CRM/Breadscrumb",
   excludeStories: /.*Data$/,
 //   decorators: [paddedList],
 };
 
 export const defaultData = {
   active: 'Profile',
-  location: ['Home', 'Mypage', 'Profile'],
+  location: [
+    { title: 'Home',
+      link: '#',
+    },
+    { title: 'Mypage',
+      link: '#',
+    },
+    { title: 'Profile',
+      link: '#',
+    }
+  ],
 };
 
 const Template = ( args, { argTypes } ) => ( {

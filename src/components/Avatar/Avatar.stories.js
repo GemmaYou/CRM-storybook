@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import Avatar from './Avatar';
 
 export default {
-  title: 'CRM/Avatar/Avatar',
+  title: 'CRM/Avatar',
   excludeStories: /.*Data$/,
 };
 

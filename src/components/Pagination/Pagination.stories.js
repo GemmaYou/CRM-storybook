@@ -9,7 +9,7 @@ import Pagination from "./Pagination";
 // };
 
 export default {
-  title: "CRM/Pagination/Pagination",
+  title: "CRM/Pagination",
   excludeStories: /.*Data$/,
   // decorators: [paddedList],
 };
@@ -19,7 +19,7 @@ export default {
 // };
 
 export const defaultData = {
-  dataLength: 40,
+  dataLength: 36,
   perPage: 10,
   dropdown: {
     title: '前往',

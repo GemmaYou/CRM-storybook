@@ -1,6 +1,6 @@
 <template>
   <div class="tabList">
-    <Tab v-for="tab in tabList.data" :tab="tab" :class="clicked == tab.label ? 'clicked': ''" @changeTab="changeTab($event)"/>
+    <Tab v-for="(tab, index) in tabList.data" :tab="tab" :class="clicked == tab.label ? 'clicked': ''" :key="index" @changeTab="changeTab($event)"/>
   </div>
 </template>
 
