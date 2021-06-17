@@ -1,6 +1,7 @@
 <template>
   <div :style="style" :class="classes">
     <font-awesome-icon :icon="fontawesome" v-if="!styleBadge.color"/>
+    <p v-if="styleBadge.checked">&#10003;</p>
   </div>
 </template>
 
@@ -17,8 +18,9 @@ export default {
       type: Object,
       required: true,
       default: () => ({
-        label: '0',
-        color: '',
+        fontAwesomeIcon: 'faCar',
+        color: false,
+        checked: false,
       }),
     },
   },
@@ -26,7 +28,7 @@ export default {
     classes() {
       return {
         'badge': true,
-        'icon': this.styleBadge.label,
+        'icon': this.styleBadge.fontAwesomeIcon,
         'color': this.styleBadge.color,
       };
     },
@@ -36,8 +38,8 @@ export default {
       };
     },
     fontawesome() {
-      if (!this.styleBadge.label) return null;
-      switch( this.styleBadge.label ){
+      if (!this.styleBadge.fontAwesomeIcon) return null;
+      switch( this.styleBadge.fontAwesomeIcon ){
         case 'faBriefcase':
           return faBriefcase;
           break;

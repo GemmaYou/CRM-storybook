@@ -6,7 +6,10 @@
   text-align: center;
   line-height: 23px;
   vertical-align: middle;
-  font-size: 12px;
+  font-size: 13px;
   border-radius: 50%;
   cursor: pointer;
+  p {
+    margin: 0;
+  }
 }
