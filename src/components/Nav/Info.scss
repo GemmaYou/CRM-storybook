@@ -51,12 +51,58 @@
         }
       }
       #nav-info-nueip-dropdown {
-        display: none;
+        // height: 44px;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-name: slidein;
+        animation-name: slidein;
         padding: 0;
+        &.show {
+          display: block;
+        }
+        &.hide {
+          display: none;
+        }
         li {
           border: none;
           list-style: none;
           padding: 2px 0;
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-name: opacityin;
+          animation-name: opacityin;
+        }
+        @-webkit-keyframes opacityin {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes opacityin {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+      @-webkit-keyframes slidein {
+        from {
+          height: 0;
+        }
+        to {
+          height: 44px;
+        }
+      }
+      @keyframes slidein {
+        from {
+          height: 0;
+        }
+        to {
+          height: 44px;
         }
       }
       &:not(:last-child) {

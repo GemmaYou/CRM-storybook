@@ -17,7 +17,7 @@
           NUEiP服務
           <font-awesome-icon :icon="faChevronDown()" id="fontawesome"/>
         </a>
-        <ul id="nav-info-nueip-dropdown">
+        <ul id="nav-info-nueip-dropdown" class="hide">
           <li><a>HRM</a></li>
           <li><a>CRM</a></li>
         </ul>
@@ -69,11 +69,13 @@ export default {
         case 'none':
           fontawesome.classList.value = "svg-inline--fa fa-chevron-down fa-w-14 change";
           // nueipA.style.display = "block"
-          nueipDropdown.style.display = "block"
+          // nueipDropdown.style.display = "block"
+          nueipDropdown.classList.value = 'show';
           break;
         case 'block':
           fontawesome.classList.value = "svg-inline--fa fa-chevron-down fa-w-14";
-          nueipDropdown.style.display = "none"
+          // nueipDropdown.style.display = "none"
+          nueipDropdown.classList.value = 'hide';
           break;
       }
     },
