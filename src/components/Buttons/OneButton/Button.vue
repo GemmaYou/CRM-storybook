@@ -30,6 +30,20 @@ import {
   faCaretRight,
 } from '@fortawesome/free-solid-svg-icons';
 
+const TYPE_FONTAWESOME_MAP = {
+  'faSearch': faSearch,
+  'faPen': faPen,
+  'faTrashAlt': faTrashAlt,
+  'faClock': faClock,
+  'faList': faList,
+  'faBorderAll': faBorderAll,
+  'faBuilding': faBuilding,
+  'faStepForward': faStepForward,
+  'faStepBackward': faStepBackward,
+  'faCaretLeft': faCaretLeft,
+  'faCaretRight': faCaretRight,
+};
+
 export default {
   name: 'oneButton',
   components: {
@@ -84,41 +98,10 @@ export default {
       `;
     },
     fontawesome() {
-      if (!this.button.icon) return null;
-      switch( this.button.fontAwesomeIcon ){
-        case 'faSearch':
-          return faSearch;
-          break;
-        case 'faPen':
-          return faPen;
-          break;
-        case 'faTrashAlt':
-          return faTrashAlt;
-          break;
-        case 'faClock':
-          return faClock;
-          break;
-        case 'faList':
-          return faList;
-          break;
-        case 'faBorderAll':
-          return faBorderAll;
-          break;
-        case 'faBuilding':
-          return faBuilding;
-          break;
-        case 'faStepForward':
-          return faStepForward;
-          break;
-        case 'faStepBackward':
-          return faStepBackward;
-          break;
-        case 'faCaretLeft':
-          return faCaretLeft;
-          break;
-        case 'faCaretRight':
-          return faCaretRight;
-          break;
+      if (!this.button.icon){
+        return null;
+      } else {
+        return TYPE_FONTAWESOME_MAP[this.button.fontAwesomeIcon];
       }
     },
   },
